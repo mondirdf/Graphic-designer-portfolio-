@@ -57,16 +57,16 @@ const item = {
 function WorksGrid() {
   return (
     <section id="work" className="scroll-mt-28">
-      <div className="mb-8 flex items-end justify-between">
-        <h2 className="text-2xl tracking-tight md:text-3xl">Selected Works</h2>
-        <p className="hidden text-sm uppercase tracking-[0.22em] text-muted md:block">2026</p>
+      <div className="mb-9 flex items-end justify-between">
+        <h2 className="text-3xl tracking-tight md:text-5xl">Selected Works</h2>
+        <p className="hidden text-sm uppercase tracking-[0.28em] text-muted md:block">2026</p>
       </div>
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid auto-rows-[220px] grid-cols-1 gap-5 md:grid-cols-3"
+        className="grid auto-rows-[220px] grid-cols-1 gap-5 sm:auto-rows-[250px] md:grid-cols-3 md:gap-6"
       >
         {works.map((project) => (
           <motion.div key={project.title} variants={item} className={project.span}>
