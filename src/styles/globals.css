@@ -21,32 +21,6 @@ body,
 
 body {
   background: #0a0a0a;
-  color: #f5f5f5;
-  overflow-x: hidden;
-}
-
-body::before,
-body::after {
-  content: '';
-  position: fixed;
-  width: 56rem;
-  height: 56rem;
-  border-radius: 9999px;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.22;
-  filter: blur(20px);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 70%);
-}
-
-body::before {
-  top: -24rem;
-  left: -16rem;
-}
-
-body::after {
-  right: -18rem;
-  bottom: -28rem;
 }
 
 .glass-panel::before {
@@ -77,13 +51,4 @@ body::after {
   background-image: radial-gradient(rgba(255, 255, 255, 0.16) 0.5px, transparent 0.5px);
   background-size: 3px 3px;
   mix-blend-mode: soft-light;
-}
-
-@media (max-width: 768px) {
-  body::before,
-  body::after {
-    width: 36rem;
-    height: 36rem;
-    opacity: 0.17;
-  }
 }
