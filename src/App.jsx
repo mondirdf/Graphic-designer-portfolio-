@@ -1,24 +1,24 @@
 const archiveProjects = [
   {
-    title: 'KINETIC FORM',
-    subtitle: 'Interaction Design',
+    title: 'AELCI BRANDING',
+    subtitle: 'Branding / Identity',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA2lmDJpoziFaWenrtzRo_vafA97KbKX_fKKZciXTl4Fk7QzgX0xKzcZjYWhQ7mC3Dw9Wa0sJfxnhsvSA_VRNYC6nlj9tldX9WZswlJk_WMwiwN4g2UrwsWPxfGwTIr4URPgRu0XcdDcZo89YRv0C3QaXvWBiIA957EJDWq51cwC-qVIMSOzjNJmI4Z5IwGpSPQKbArSNbio-9DxuT-RAk8iIRDe1H0qIj6NPsTuf7nWo7FHM50Il862mLqSDaEmScI0pAY8luHeHU',
-    alt: 'Close up of shadow play on a white textured wall',
+      'https://images.unsplash.com/photo-1600508774634-4e11d34730e2?auto=format&fit=crop&w=1000&q=80',
+    alt: 'AELCI branding mockup on stationery',
   },
   {
-    title: 'OSCILLATION',
-    subtitle: 'Brand Identity',
+    title: 'TUNAY INTERIOR BRANDING',
+    subtitle: 'Branding / Identity',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAdQVDSfmNt3wyvrqc5OeKUvaeMI9ft-p3G-cTbOI978fqufKGwBH7Zj_V_5_BUPmIPEgkLHdIlz27GenyMaDx97mEi13S42KJxnhmyq6Xa3nNr8aaEbOWr6agWkyLNnXcu5vTIhoRkzLa7RJ2GkzkFFSDKwCNYP1TydYYtLExi8fwCAFIka2HkULKHTR4glWNxbuomTh37kvzkfJCBO5MQzeiTJJ-je56yVvJR93KTyVNK-pImFB-KitvKRMT6VzEl1QE2vzEtEZw',
-    alt: 'Monochrome landscape of a mountain peak in mist',
+      'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=1000&q=80',
+    alt: 'TUNAY interior branding presentation',
   },
   {
-    title: 'NEURAL FLOW',
-    subtitle: 'Product Design',
+    title: 'AERIS COFFEE BRAND',
+    subtitle: 'Branding / Identity',
     image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC5dwWICi2xbUZICfWLfDDYLIJm8WtPJy0LTAt5-ZcR6Q1u-mcxSzAO46iUCGEMIzeudjywfFsV3sAlGis6c4JbkIn-ilDHjGj4ClHqWhJvp_vxSqKIOAZo7RIIcR77aOfg_ctvRYLD8N_TH102qTuKk9MZB_yXYDGS7vHtreQa8AOzHuWZgndA4QBPuR4FHxfiTiGlcBtUjdmPbplJ8wyB9LLlCDVKW_1zfg0kbrRC2q5H23ltOSHAwRI4DHIm1OUEZoe8Ue9_0Gk',
-    alt: 'Digital smoky gray gradient art',
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80',
+    alt: 'AERIS coffee brand packaging mockup',
   },
 ];
 
@@ -57,7 +57,7 @@ function App() {
               CONTACT
             </a>
           </div>
-          <div className="text-lg font-bold tracking-tighter text-white">THE MONOLITH</div>
+          <div className="text-lg font-bold tracking-tighter text-white">BRAND DESIGNER</div>
         </nav>
       </header>
 
@@ -67,40 +67,44 @@ function App() {
             <div className="glass-card inline-flex items-center gap-3 rounded-full px-4 py-2">
               <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
               <span className="text-[10px] uppercase tracking-widest text-neutral-400">
-                Available for select projects 2024
+                Available for freelance projects
               </span>
             </div>
             <h1 className="font-headline text-[clamp(4rem,15vw,12rem)] font-extrabold leading-[0.85] tracking-tighter text-white">
-              DIGITAL
+              BRAND
               <br />
-              ARCHITECT.
+              DESIGNER.
             </h1>
             <div className="glass-card mt-12 max-w-xl rounded-2xl p-8">
               <p className="text-lg italic leading-relaxed text-neutral-400">
-                "Synthesizing high-end editorial aesthetics with monolithic digital structures. We build experiences that transcend the transient."
+                "I design brands that communicate clearly, feel premium, and stay memorable."
               </p>
             </div>
+            <p className="max-w-xl text-sm leading-relaxed text-neutral-400 md:text-base">
+              Crafting visual identities, branding systems, and social media designs.
+            </p>
           </div>
         </section>
 
         <section className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-12" id="studio">
           <div className="glass-card group relative flex flex-col justify-end overflow-hidden rounded-2xl p-8 md:col-span-8 md:row-span-2">
             <img
-              alt="Abstract architecture"
+              alt="AELCI fashion branding mockup"
               className="absolute inset-0 h-full w-full object-cover opacity-60 grayscale transition-transform duration-700 ease-in-out group-hover:scale-105"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKewZYB2rNRhRb-mFYXShghBrWlCc3_GT7BmP8nGFFXAoR5P1cZk4abl38kPTyaAqJqdTgpQqhtC_FsmaxQzhPCf1q678eV7ljVOUfpq-yzoIQDlwzIXvbYxkqikfqrqZ8aPX3R-kBZQG2Ly0u_JWOF4xZF18qeZr8KcjJrxvtP-QJb89TRHE8t3VefXBHm9m4DBfuf28tGoSeXNjnRO_EtMQG8Ot3g86Po8PtIAssk1tfLuh-H6-0-HEYBj8u6raZD1Iq9BQfJsE"
+              src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1600&q=80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="relative z-10">
-              <span className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-white/60">EDITORIAL / WEB</span>
-              <h3 className="font-headline text-4xl font-bold tracking-tight text-white">ETHEREAL MONOLITH</h3>
+              <span className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-white/60">Brand Identity</span>
+              <h3 className="font-headline text-4xl font-bold tracking-tight text-white">AELCI BRANDING</h3>
+              <p className="mt-3 max-w-xl text-sm text-white/80">Minimal and elegant brand identity for a fashion label.</p>
               <div className="mt-6 flex gap-4">
                 <button
                   className="rounded-full bg-white px-6 py-2 text-xs font-bold uppercase tracking-widest text-black transition-transform hover:scale-105"
                   onClick={() => scrollToSection('work')}
                   type="button"
                 >
-                  View Case
+                  View Projects
                 </button>
               </div>
             </div>
@@ -110,27 +114,27 @@ function App() {
             <div className="space-y-4">
               <div className="flex items-start justify-between">
                 <span className="material-symbols-outlined text-3xl text-white">all_inclusive</span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Identity</span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Social Media</span>
               </div>
-              <h4 className="font-headline text-2xl font-light leading-tight text-white">Visualizing silence in the digital noise.</h4>
+              <h4 className="font-headline text-2xl font-light leading-tight text-white">Clear brand visuals built for consistent digital presence.</h4>
             </div>
             <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
               <img
-                alt="Glass abstract"
+                alt="Social media branding templates"
                 className="h-full w-full object-cover brightness-75 grayscale"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVgI5FjZ-1sAHZJl3sPZzLsPL55RuUK8jLLK_u_Y7j9o_vFjq8LNZK0lB6EkokiC54cOy5MF3VokVAOnSXdBjGWH0gi_OBauZRWtZYagzohQT-74-SxW1CC7lWPLiNUZbYcCg2RQ_Cy6cMYRN1hweEP8NbjiQz7l-_3ScN_6Q-dD7qViFIpF0Dmhsuq2MrZpAyNGVqWmRcMlnIZi6BaQxQhKdM3wTnZLg7egzFQtfuoVvLPWt9gxiwokxTozLk8Aqr38hsEWvAiZs"
+                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80"
               />
             </div>
           </div>
 
           <div className="glass-card group relative overflow-hidden rounded-2xl md:col-span-6 md:row-span-1">
             <img
-              alt="Interior"
+              alt="TUNAY interior branding mockup"
               className="absolute inset-0 h-full w-full object-cover opacity-40 grayscale transition-transform duration-1000 group-hover:scale-110"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcRFYYsGmjfHTYbxvkztmX1OGwmJzWTn0KoRdi8reSki6GFkOzBMN5NxQ2fuvXAvuik-jc1LpgsiFcy0VkbzQDnI8J-6p6IN5yi9JF2aS4c3yy-rGMQ_VRrK9dj5Agri1hBtpxuZwmc6fE_-0eKFnqlvZ_H4UdyHg8sgmvQykZx1tVq4VQC-QQ6hQmbZRSNs1dippdP_mcSPPIllFTF__TV5FzNv5blFqlqyf229Lc4XQDDSuQQ5mwsm3zSuYaerVa2ys9VxWdnvU"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h3 className="font-headline text-2xl font-light uppercase tracking-[0.4em] text-white">The Studio</h3>
+              <h3 className="font-headline text-2xl font-light uppercase tracking-[0.4em] text-white">TUNAY INTERIOR BRANDING</h3>
             </div>
           </div>
 
@@ -153,10 +157,10 @@ function App() {
             </div>
             <button
               className="border-b border-white/20 pb-2 text-[10px] uppercase tracking-widest text-white transition-all hover:border-white"
-              onClick={() => scrollToSection('work')}
+              onClick={() => scrollToSection('contact')}
               type="button"
             >
-              Explore all / 042
+              Work With Me
             </button>
           </div>
 
@@ -200,7 +204,17 @@ function App() {
 
       <footer className="w-full border-t border-white/5 bg-neutral-950 px-8 py-20" id="contact">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-12">
-          <div className="font-headline text-4xl font-bold tracking-tighter text-white">THE MONOLITHIC ETHER.</div>
+          <div className="font-headline text-4xl font-bold tracking-tighter text-white">ABOUT THE DESIGNER</div>
+          <p className="max-w-3xl text-center text-sm leading-relaxed text-neutral-500 md:text-base">
+            Graphic designer focused on branding, visual identity and social media design. Helping brands build strong and
+            consistent visual presence.
+          </p>
+          <a
+            className="rounded-full border border-white/20 px-6 py-2 text-[10px] uppercase tracking-[0.3em] text-neutral-300 transition-all duration-700 hover:text-white"
+            href="mailto:hello@branddesigner.studio"
+          >
+            Contact Me
+          </a>
           <div className="flex gap-12">
             <a
               className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
@@ -227,7 +241,7 @@ function App() {
               DRIBBBLE
             </a>
           </div>
-          <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500">© 2024 THE MONOLITHIC ETHER. ALL RIGHTS RESERVED.</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500">© 2026 BRAND DESIGNER. ALL RIGHTS RESERVED.</p>
         </div>
       </footer>
 
