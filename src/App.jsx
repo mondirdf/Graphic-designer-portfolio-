@@ -26,13 +26,26 @@ const archiveProjects = [
 
 function App() {
   useEffect(() => {
+    const indicator = document.querySelector('.nav-indicator');
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('#home, #work, #about, #contact');
+
+    const moveIndicator = (index) => {
+      if (!indicator || !navItems[index]) return;
+
+      const item = navItems[index];
+      const rect = item.getBoundingClientRect();
+      const parentRect = item.parentElement.getBoundingClientRect();
+      const offset = rect.left - parentRect.left;
+
+      indicator.style.transform = `translateX(${offset}px)`;
+    };
 
     navItems.forEach((item) => {
       item.addEventListener('click', () => {
         const targetId = item.dataset.section;
         const section = document.getElementById(targetId);
+        const index = Number(item.dataset.index);
 
         if (section) {
           section.scrollIntoView({ behavior: 'smooth' });
@@ -40,6 +53,7 @@ function App() {
 
         navItems.forEach((i) => i.classList.remove('active'));
         item.classList.add('active');
+        moveIndicator(index);
       });
     });
 
@@ -54,6 +68,7 @@ function App() {
 
               if (item.dataset.section === id) {
                 item.classList.add('active');
+                moveIndicator(Number(item.dataset.index));
               }
             });
           }
@@ -64,10 +79,18 @@ function App() {
       }
     );
 
+    const handleResize = () => {
+      const activeIndex = [...navItems].findIndex((item) => item.classList.contains('active'));
+      moveIndicator(activeIndex >= 0 ? activeIndex : 0);
+    };
+
     sections.forEach((section) => observer.observe(section));
+    moveIndicator(0);
+    window.addEventListener('resize', handleResize);
 
     return () => {
       observer.disconnect();
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -235,17 +258,18 @@ function App() {
         </section>
       </main>
 
-      <nav className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-[0_20px_40px_rgba(0,0,0,0.4)] backdrop-blur-2xl md:hidden">
-        <a className="nav-item active scale-95 rounded-full bg-white p-3 text-black transition-transform duration-300 active:duration-75" data-section="home" href="#home">
+      <nav className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-[0_20px_40px_rgba(0,0,0,0.4)] backdrop-blur-2xl md:hidden relative">
+        <div className="nav-indicator" />
+        <a className="nav-item active relative z-10 scale-95 rounded-full p-3 text-black transition-transform duration-300 active:duration-75" data-index="0" data-section="home" href="#home">
           <span className="material-symbols-outlined">home</span>
         </a>
-        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="work" href="#work">
+        <a className="nav-item relative z-10 p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-index="1" data-section="work" href="#work">
           <span className="material-symbols-outlined">work_outline</span>
         </a>
-        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="about" href="#about">
+        <a className="nav-item relative z-10 p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-index="2" data-section="about" href="#about">
           <span className="material-symbols-outlined">person</span>
         </a>
-        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="contact" href="#contact">
+        <a className="nav-item relative z-10 p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-index="3" data-section="contact" href="#contact">
           <span className="material-symbols-outlined">mail</span>
         </a>
       </nav>
