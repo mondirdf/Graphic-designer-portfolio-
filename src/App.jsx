@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 const archiveProjects = [
   {
     title: 'AELCI BRANDING',
@@ -23,6 +25,52 @@ const archiveProjects = [
 ];
 
 function App() {
+  useEffect(() => {
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('#home, #work, #about, #contact');
+
+    navItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const targetId = item.dataset.section;
+        const section = document.getElementById(targetId);
+
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        navItems.forEach((i) => i.classList.remove('active'));
+        item.classList.add('active');
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+
+            navItems.forEach((item) => {
+              item.classList.remove('active');
+
+              if (item.dataset.section === id) {
+                item.classList.add('active');
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
 
@@ -32,7 +80,7 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0a0a] font-body text-[#e5e2e1] selection:bg-white selection:text-black" id="home">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0a0a] font-body text-[#e5e2e1] selection:bg-white selection:text-black">
       <div className="grain-overlay" />
       <div className="radial-glow left-[-10%] top-[-20%]" />
       <div className="radial-glow bottom-[-20%] right-[-10%]" />
@@ -50,7 +98,7 @@ function App() {
             <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#work">
               WORK
             </a>
-            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#studio">
+            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#about">
               STUDIO
             </a>
             <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#contact">
@@ -62,7 +110,7 @@ function App() {
       </header>
 
       <main className="relative z-10 mx-auto max-w-[1600px] px-8 pb-40 pt-32">
-        <section className="mb-32">
+        <section className="mb-32" id="home">
           <div className="flex flex-col items-start gap-8">
             <div className="glass-card inline-flex items-center gap-3 rounded-full px-4 py-2">
               <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
@@ -86,7 +134,7 @@ function App() {
           </div>
         </section>
 
-        <section className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-12" id="studio">
+        <section className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-12" id="about">
           <div className="glass-card group relative flex flex-col justify-end overflow-hidden rounded-2xl p-8 md:col-span-8 md:row-span-2">
             <img
               alt="AELCI fashion branding mockup"
@@ -188,16 +236,16 @@ function App() {
       </main>
 
       <nav className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-[0_20px_40px_rgba(0,0,0,0.4)] backdrop-blur-2xl md:hidden">
-        <a className="scale-95 rounded-full bg-white p-3 text-black transition-transform duration-300 active:duration-75" href="#home">
+        <a className="nav-item active scale-95 rounded-full bg-white p-3 text-black transition-transform duration-300 active:duration-75" data-section="home" href="#home">
           <span className="material-symbols-outlined">home</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#work">
+        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="work" href="#work">
           <span className="material-symbols-outlined">work_outline</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#studio">
+        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="about" href="#about">
           <span className="material-symbols-outlined">person</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#contact">
+        <a className="nav-item p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" data-section="contact" href="#contact">
           <span className="material-symbols-outlined">mail</span>
         </a>
       </nav>
