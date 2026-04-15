@@ -263,7 +263,7 @@ function App() {
           >
             Contact Me
           </a>
-          <div className="flex gap-12">
+          <div className="social-container flex gap-12">
             <a
               className="social-link text-[10px] uppercase tracking-[0.3em]"
               href="https://www.instagram.com/"
