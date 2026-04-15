@@ -210,7 +210,7 @@ function App() {
             consistent visual presence.
           </p>
           <a
-            className="rounded-full border border-white/20 px-6 py-2 text-[10px] uppercase tracking-[0.3em] text-neutral-300 transition-all duration-700 hover:text-white"
+            className="contact-button rounded-full border border-white/20 px-6 py-2 text-[10px] uppercase tracking-[0.3em] transition-all duration-700"
             href="mailto:hello@branddesigner.studio"
           >
             Contact Me
