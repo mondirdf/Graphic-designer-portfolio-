@@ -265,7 +265,7 @@ function App() {
           </a>
           <div className="flex gap-12">
             <a
-              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              className="social-link text-[10px] uppercase tracking-[0.3em]"
               href="https://www.instagram.com/"
               rel="noreferrer"
               target="_blank"
@@ -273,7 +273,7 @@ function App() {
               INSTAGRAM
             </a>
             <a
-              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              className="social-link text-[10px] uppercase tracking-[0.3em]"
               href="https://www.behance.net/"
               rel="noreferrer"
               target="_blank"
@@ -281,7 +281,7 @@ function App() {
               BEHANCE
             </a>
             <a
-              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              className="social-link text-[10px] uppercase tracking-[0.3em]"
               href="https://dribbble.com/"
               rel="noreferrer"
               target="_blank"
