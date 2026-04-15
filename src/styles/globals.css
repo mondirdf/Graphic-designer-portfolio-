@@ -57,3 +57,19 @@ body {
   backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+body {
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+
+.contact-button {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-button:active {
+  transform: scale(0.96);
+}
