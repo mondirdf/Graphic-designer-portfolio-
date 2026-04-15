@@ -93,3 +93,21 @@ body {
   transform: scale(0.96);
   opacity: 0.8;
 }
+
+@media (max-width: 768px) {
+  .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .social-link {
+    flex: 1 1 auto;
+    text-align: center;
+    min-width: 110px;
+    padding: 10px 16px;
+    white-space: nowrap;
+  }
+}
