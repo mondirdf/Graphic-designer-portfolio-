@@ -89,7 +89,7 @@ function App() {
         <nav className="flex w-full items-center justify-between px-8 py-6">
           <div className="flex items-center gap-4">
             <span className="material-symbols-outlined text-white">grid_view</span>
-            <span className="font-headline text-xs uppercase tracking-[0.2em] text-white">CURATOR</span>
+            <span className="font-headline text-xs uppercase tracking-[0.2em] text-white">C-hub</span>
           </div>
           <div className="hidden items-center gap-8 md:flex">
             <a className="border-b border-white/50 font-headline text-xs uppercase tracking-[0.2em] text-white" href="#home">
