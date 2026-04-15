@@ -23,8 +23,16 @@ const archiveProjects = [
 ];
 
 function App() {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0a0a] font-body text-[#e5e2e1] selection:bg-white selection:text-black">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#0a0a0a] font-body text-[#e5e2e1] selection:bg-white selection:text-black" id="home">
       <div className="grain-overlay" />
       <div className="radial-glow left-[-10%] top-[-20%]" />
       <div className="radial-glow bottom-[-20%] right-[-10%]" />
@@ -36,16 +44,16 @@ function App() {
             <span className="font-headline text-xs uppercase tracking-[0.2em] text-white">CURATOR</span>
           </div>
           <div className="hidden items-center gap-8 md:flex">
-            <a className="border-b border-white/50 font-headline text-xs uppercase tracking-[0.2em] text-white" href="#">
+            <a className="border-b border-white/50 font-headline text-xs uppercase tracking-[0.2em] text-white" href="#home">
               HOME
             </a>
-            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#">
+            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#work">
               WORK
             </a>
-            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#">
+            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#studio">
               STUDIO
             </a>
-            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#">
+            <a className="font-headline text-xs uppercase tracking-[0.2em] text-neutral-500 transition-colors duration-500 hover:text-white" href="#contact">
               CONTACT
             </a>
           </div>
@@ -75,7 +83,7 @@ function App() {
           </div>
         </section>
 
-        <section className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-12">
+        <section className="grid auto-rows-[300px] grid-cols-1 gap-8 md:grid-cols-12" id="studio">
           <div className="glass-card group relative flex flex-col justify-end overflow-hidden rounded-2xl p-8 md:col-span-8 md:row-span-2">
             <img
               alt="Abstract architecture"
@@ -87,7 +95,11 @@ function App() {
               <span className="mb-2 block text-[10px] uppercase tracking-[0.3em] text-white/60">EDITORIAL / WEB</span>
               <h3 className="font-headline text-4xl font-bold tracking-tight text-white">ETHEREAL MONOLITH</h3>
               <div className="mt-6 flex gap-4">
-                <button className="rounded-full bg-white px-6 py-2 text-xs font-bold uppercase tracking-widest text-black transition-transform hover:scale-105">
+                <button
+                  className="rounded-full bg-white px-6 py-2 text-xs font-bold uppercase tracking-widest text-black transition-transform hover:scale-105"
+                  onClick={() => scrollToSection('work')}
+                  type="button"
+                >
                   View Case
                 </button>
               </div>
@@ -133,13 +145,17 @@ function App() {
           </div>
         </section>
 
-        <section className="mt-40">
+        <section className="mt-40" id="work">
           <div className="mb-16 flex items-end justify-between">
             <div>
               <span className="mb-4 block text-[10px] uppercase tracking-[0.5em] text-neutral-500">Archive</span>
               <h2 className="font-headline text-5xl font-bold tracking-tighter text-white">SELECT WORKS</h2>
             </div>
-            <button className="border-b border-white/20 pb-2 text-[10px] uppercase tracking-widest text-white transition-all hover:border-white">
+            <button
+              className="border-b border-white/20 pb-2 text-[10px] uppercase tracking-widest text-white transition-all hover:border-white"
+              onClick={() => scrollToSection('work')}
+              type="button"
+            >
               Explore all / 042
             </button>
           </div>
@@ -168,31 +184,46 @@ function App() {
       </main>
 
       <nav className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 gap-4 rounded-full border border-white/10 bg-white/5 px-4 py-2 shadow-[0_20px_40px_rgba(0,0,0,0.4)] backdrop-blur-2xl md:hidden">
-        <a className="scale-95 rounded-full bg-white p-3 text-black transition-transform duration-300 active:duration-75" href="#">
+        <a className="scale-95 rounded-full bg-white p-3 text-black transition-transform duration-300 active:duration-75" href="#home">
           <span className="material-symbols-outlined">home</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#">
+        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#work">
           <span className="material-symbols-outlined">work_outline</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#">
+        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#studio">
           <span className="material-symbols-outlined">person</span>
         </a>
-        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#">
+        <a className="p-3 text-neutral-400 transition-transform duration-300 hover:scale-110" href="#contact">
           <span className="material-symbols-outlined">mail</span>
         </a>
       </nav>
 
-      <footer className="w-full border-t border-white/5 bg-neutral-950 px-8 py-20">
+      <footer className="w-full border-t border-white/5 bg-neutral-950 px-8 py-20" id="contact">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-12">
           <div className="font-headline text-4xl font-bold tracking-tighter text-white">THE MONOLITHIC ETHER.</div>
           <div className="flex gap-12">
-            <a className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white" href="#">
+            <a
+              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              href="https://www.instagram.com/"
+              rel="noreferrer"
+              target="_blank"
+            >
               INSTAGRAM
             </a>
-            <a className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white" href="#">
+            <a
+              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              href="https://www.behance.net/"
+              rel="noreferrer"
+              target="_blank"
+            >
               BEHANCE
             </a>
-            <a className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white" href="#">
+            <a
+              className="text-[10px] uppercase tracking-[0.3em] text-neutral-600 transition-all duration-700 hover:text-white"
+              href="https://dribbble.com/"
+              rel="noreferrer"
+              target="_blank"
+            >
               DRIBBBLE
             </a>
           </div>
